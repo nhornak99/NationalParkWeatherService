@@ -1,0 +1,12 @@
+﻿@model List<NPGeek.Web.Models.Park>
+@{
+    ViewBag.Title = "FavoriteParks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>FavoriteParks</h2>
+@foreach(var park in Model)
+{
+    <h1>@park.Name</h1>
+    <h3>@park.NumberOfFavorites</h3>
+}

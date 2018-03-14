@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "ParkDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var Weather = Json.Decode(Model.weather);
+    var Weather = Json.Decode(Model.Weather);
     var Today = Weather[0];
     Dictionary<string, string> weatherAdvice = new Dictionary<string, string>()
     {

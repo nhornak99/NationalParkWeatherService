@@ -140,13 +140,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FavoriteParksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DALS\IParkDAL.cs" />
+    <Compile Include="Models\DALS\ISurveyDAL.cs" />
     <Compile Include="Models\DALS\ParkDAL.cs" />
+    <Compile Include="Models\DALS\SurveyDAL.cs" />
     <Compile Include="Models\Park.cs" />
+    <Compile Include="Models\SurveyResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +164,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\ParkDetail.cshtml" />
+    <Content Include="Views\FavoriteParks\Survey.cshtml" />
+    <Content Include="Views\FavoriteParks\FavoriteParks.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -28,7 +28,7 @@ namespace NPGeek.Web.Controllers
 
         public ActionResult ParkDetail(Park park)
         {
-            park.weather = dal.GetWeatherData(park.ParkCode);
+            park.Weather = dal.GetWeatherData(park.ParkCode);
 
             return View("ParkDetail", park);
         }

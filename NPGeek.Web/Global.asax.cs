@@ -32,6 +32,7 @@ namespace NPGeek.Web
             // Map Interfaces to Classes
             //kernel.Bind<interface>().To<class>();
             kernel.Bind<IParkDAL>().To<ParkDAL>();
+            kernel.Bind<ISurveyDAL>().To<SurveyDAL>();
 
             return kernel;
         }
