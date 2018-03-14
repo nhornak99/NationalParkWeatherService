@@ -14,6 +14,9 @@
     };
     var High = Today.High;
     var Low = Today.Low;
+    string HotToday = (High > 75) ? "Bring an extra gallon of water." : "";
+    string ColdToday = (Low < 20) ? "Be cautious of the danger of exposure to frigid temperatures" : "";
+    string VariableTemperatureToday = (Math.Abs(High - Low) > 20) ? "Wear breathable layers" : "";
 }
 
 <h2>ParkDetail</h2>
@@ -21,10 +24,24 @@
 <div class="detail-park-name"><h1>@Model.Name</h1></div>
 <div class="detail-park-description"><p>@Model.Description</p></div>
 <br />
-<div class="weather-detail-today"><h3>Today</h3>
+<div class="weather-detail-today">
+    <h3>Today</h3>
     <img src="~/Content/Images/weather/@(Today.Forecast).png" />
     <div class="weather-detail-today-highlow">@Today.High @Today.Low</div>
-    <p></p>
+    <p>@weatherAdvice[Today.Forecast]</p>
+    <p>@HotToday</p>
+    <p>@ColdToday</p>
+    <p>@VariableTemperatureToday</p>
+</div>
+<div class="detail-four-day-forecast">
+    @for (int i = 1; i <= 4; i++) //4 is the number of days left in the five day forecast after having shown todays information
+    {
+    <div class="weather-detail-day">
+        <img src="~/Content/Images/weather/@(Weather[i].Forecast.Replace(" ", "")).png" />
+        <p>@Weather[i].High</p>
+        <p>@Weather[i].Low</p>
+    </div>
+    }
 </div>
 
 
