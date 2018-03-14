@@ -144,6 +144,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DALS\IParkDAL.cs" />
     <Compile Include="Models\DALS\ParkDAL.cs" />
     <Compile Include="Models\Park.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

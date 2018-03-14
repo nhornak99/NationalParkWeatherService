@@ -1,5 +1,6 @@
 ﻿using Ninject;
 using Ninject.Web.Common.WebHost;
+using NPGeek.Web.Models.DALS;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -30,6 +31,7 @@ namespace NPGeek.Web
 
             // Map Interfaces to Classes
             //kernel.Bind<interface>().To<class>();
+            kernel.Bind<IParkDAL>().To<ParkDAL>();
 
             return kernel;
         }
