@@ -1,8 +1,30 @@
-﻿
+﻿@model NPGeek.Web.Models.Park
 @{
     ViewBag.Title = "ParkDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var Weather = Json.Decode(Model.weather);
+    var Today = Weather[0];
+    Dictionary<string, string> weatherAdvice = new Dictionary<string, string>()
+    {
+        { "rain" , "Pack rain gear and wear waterproof shoes." },
+        { "partly cloudy", "Don't bother bringing sunscreen!"},
+        { "thunderstorms", "Seek shelter and avoid hiking on exposed ridges." },
+        { "sunny", "pack sunblock." },
+        { "snow", "pack snowshoes."},
+    };
+    var High = Today.High;
+    var Low = Today.Low;
 }
 
 <h2>ParkDetail</h2>
+<img src="~/Content/Images/parks/@(Model.ParkCode.ToLower()).jpg"/>
+<div class="detail-park-name"><h1>@Model.Name</h1></div>
+<div class="detail-park-description"><p>@Model.Description</p></div>
+<br />
+<div class="weather-detail-today"><h3>Today</h3>
+    <img src="~/Content/Images/weather/@(Today.Forecast).png" />
+    <div class="weather-detail-today-highlow">@Today.High @Today.Low</div>
+    <p></p>
+</div>
+
 
