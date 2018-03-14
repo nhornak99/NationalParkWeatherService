@@ -22,5 +22,7 @@ namespace NPGeek.Web.Models
         public string Description { get; set; }
         public decimal EntryFee { get; set; }
         public int NumberOfAnimalSpecies { get; set; }
+
+        public string weather { get; set; }
     }
 }

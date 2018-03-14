@@ -1,4 +1,5 @@
-﻿using NPGeek.Web.Models.DALS;
+﻿using NPGeek.Web.Models;
+using NPGeek.Web.Models.DALS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,13 @@ namespace NPGeek.Web.Controllers
             var park = dal.GetAllParks();
 
             return View("Index", park);
+        }
+
+        public ActionResult ParkDetail(Park park)
+        {
+            park.weather = dal.GetWeatherData(park.ParkCode);
+
+            return View("ParkDetail", park);
         }
     }
 }

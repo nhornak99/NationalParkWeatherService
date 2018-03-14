@@ -1,7 +1,16 @@
 ﻿@model List<NPGeek.Web.Models.Park>
 @{
-//ViewBag.Title = "Index";
+    //ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Home</h2>
 
+@foreach(var park in Model)
+{
+    <div class="parkContainer">
+        <a href="@Url.Action("ParkDetail", "Home", park)"><img class="parkImg" src="~/Content/Images/parks/@(park.ParkCode.ToLower()).jpg" /></a>
+        <h2>@park.Name</h2>
+        <p>@park.Description</p>
+    </div>
+}
