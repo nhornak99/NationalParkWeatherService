@@ -1,4 +1,5 @@
-﻿using NPGeek.Web.Models.DALS;
+﻿using NPGeek.Web.Models;
+using NPGeek.Web.Models.DALS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace NPGeek.Web.Controllers
         // GET: FavoriteParks
         public ActionResult Survey()
         {
-            return View();
+            return View("Survey");
         }
 
         public ActionResult FavoriteParks()
@@ -26,6 +27,13 @@ namespace NPGeek.Web.Controllers
             var parks = dal.GetFavoriteParks();
 
             return View("FavoriteParks", parks);
+        }
+
+        [HttpPost]
+        public ActionResult GetSurvey(SurveyResult survey)
+        {
+            dal.SaveSurvey(survey);
+            return RedirectToAction("FavoriteParks", survey);
         }
     }
 }

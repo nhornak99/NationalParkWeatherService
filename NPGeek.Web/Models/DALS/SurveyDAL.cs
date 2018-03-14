@@ -66,7 +66,27 @@ namespace NPGeek.Web.Models.DALS
 
         public void SaveSurvey(SurveyResult model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand(@"INSERT INTO survey_result (parkCode, emailAddress, state, activityLevel)
+                                                    VALUES (@parkCode, @emailAddress, @state, @activityLevel)", conn);
+
+                    cmd.Parameters.AddWithValue("@parkCode", model.FavoriteParkCode);
+                    cmd.Parameters.AddWithValue("@emailAddress", model.Email);
+                    cmd.Parameters.AddWithValue("@state", model.State);
+                    cmd.Parameters.AddWithValue("@activityLevel", model.ActivityLevel);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch(SqlException)
+            {
+
+            }
         }
     }
 }
