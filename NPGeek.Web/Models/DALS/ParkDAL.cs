@@ -95,20 +95,23 @@ namespace NPGeek.Web.Models.DALS
             return jss.Serialize(weatherData);
         }
 
-        public int[] GetLatitudeAndLongitude(string parkCode)
+        public string GetWeatherApiDataFromParkCode(string parkCode)
         {
-            Dictionary<string, int[]> location = new Dictionary<string, int[]>()
+
+            JavaScriptSerializer jss = new JavaScriptSerializer();
+
+            Dictionary<string, double[]> location = new Dictionary<string, double[]>()
             {
-                {"GTNP" ,new int[]{44, 111 } },
-                {"MRNP" , new int[]{47, 122 }},
-                {"RMNP" ,new int[]{ 40, 106} },
-                {"CVNP" ,new int[]{41, 82 } },
-                {"ENP" ,new int[]{ 26, 81} },
-                { "GCNP",new int[]{ 36, 112} },
-                {"GNP" ,new int[]{49, 114 } },
-                {"GSMNP" ,new int[]{36, 84 } },
-                {"YNP2" ,new int[]{38 , 120 } },
-                {"YNP" ,new int[]{44 , 111 } }
+                {"GTNP" ,new double[]{43.7904, -110.6818 } },
+                {"MRNP" , new double[]{46.8800, -121.7269 }},
+                {"RMNP" ,new double[]{ 40.3428, -105.6836 } },
+                {"CVNP" ,new double[]{41.2808, -81.5678 } },
+                {"ENP" ,new double[]{ 25.2866, -80.8987} },
+                { "GCNP",new double[]{ 36.1070, -112.1130 } },
+                {"GNP" ,new double[]{ 48.7596, -113.7870 } },
+                {"GSMNP" ,new double[]{35.6118, -83.4895 } },
+                {"YNP2" ,new double[]{37.8651 , -119.5383 } },
+                {"YNP" ,new double[]{44.4280 , -110.5885 } }
             };
 
             var weatherData = new List<object>();
@@ -117,15 +120,20 @@ namespace NPGeek.Web.Models.DALS
             {
                 json = Newtonsoft.Json.JsonConvert.DeserializeObject(wc.DownloadString("https://api.darksky.net/forecast/81d9e91d0dd5e5e49eb5d6d739e0d9c3/" + location[parkCode][0] + ", " + location[parkCode][1]));
             }
-            var sfsd = json.daily.data[0].time;
-            weatherData.Add(new
+
+            for (int i = 0; i < 5; i++)
             {
-                Day = UnixTimeStampToDateTime(Convert.ToDouble(json.daily.data[0].time))
+                weatherData.Add(new
+                {
+                    Day = UnixTimeStampToDateTime(Convert.ToDouble(json.daily.data[i].time)),
+                    Low = Convert.ToInt32(json.daily.data[i].temperatureLow),
+                    High = Convert.ToInt32(json.daily.data[i].temperatureHigh),
+                    Forecast = Convert.ToString(json.daily.data[i].icon)
+                });
+            }
+            
 
-            });
-
-
-            return location[parkCode];
+            return jss.Serialize(weatherData);
         }
 
         public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)

@@ -7,12 +7,37 @@
     Dictionary<string, string> weatherAdvice = new Dictionary<string, string>()
     {
         { "rain" , "Pack rain gear and wear waterproof shoes." },
-        { "partly cloudy", "Don't bother bringing sunscreen!"},
-        { "thunderstorms", "Seek shelter and avoid hiking on exposed ridges." },
+        { "partly-cloudy-day", "Don't bother bringing sunscreen!"},
+        { "thunderstorm", "Seek shelter and avoid hiking on exposed ridges." },
         { "cloudy", "Don't bother bringing sunscreen!" },
-        { "sunny", "pack sunblock." },
+        { "clear-day", "pack sunblock." },
+        { "clear-night", "Moon should be visible tonight."},
+        { "sleet", "Sleet coming, dress accordingly."},
+        { "wind", "Bring a wind-breaker."},
+        { "fog", "Low visibility, fog coming."},
         { "snow", "pack snowshoes."},
+        { "partly-cloudy-night", "Partly cloudy night."},
+        { "hail", "Hail coming. Be warned!"},
+        { "tornado", "Tornado sighted. Seek shelter now!"},
     };
+
+    Dictionary<string, string> iconTranslation = new Dictionary<string, string>()
+    {
+        { "rain" , "rain.png" },
+        { "partly-cloudy-day", "partlyCloudy.png"},
+        { "thunderstorm", "thunderstorms.png" },
+        { "cloudy", "cloudy.png" },
+        { "clear-day", "sunny.png" },
+        { "clear-night", "sunny.png"},
+        { "sleet", "snow.png"},
+        { "wind", "rain.png"},
+        { "fog", "cloudy.png"},
+        { "snow", "snow.png"},
+        { "partly-cloudy-night", "cloudy.png"},
+        { "hail", "snow.png"},
+        { "tornado", "thunderstorms.png"},
+    };
+
     var High = Today.High;
     var Low = Today.Low;
     string HotToday = (High > 75) ? "Bring an extra gallon of water." : "";
@@ -27,7 +52,7 @@
 <br />
 <div class="weather-detail-today">
     <h3>Today</h3>
-    <img src="~/Content/Images/weather/@(Today.Forecast).png" />
+    <img src="~/Content/Images/weather/@iconTranslation[Today.Forecast]" />
     <div class="weather-detail-today-highlow">High: <span class="weather-conversion"> @Today.High</span>&deg; Low: <span class="weather-conversion">@Today.Low</span>&deg;</div>
     <p>@weatherAdvice[Today.Forecast]</p>
     <p>@HotToday</p>
@@ -38,7 +63,7 @@
     @for (int i = 1; i <= 4; i++) //4 is the number of days left in the five day forecast after having shown todays information
     {
     <div class="weather-detail-day">
-        <img src="~/Content/Images/weather/@(Weather[i].Forecast.Replace(" ", "")).png" />
+        <img src="~/Content/Images/weather/@iconTranslation[Weather[i].Forecast]" />
         <p>High: <span class="weather-conversion">@Weather[i].High</span>&deg;</p>
         <p>Low: <span class="weather-conversion">@Weather[i].Low</span>&deg;</p>
     </div>

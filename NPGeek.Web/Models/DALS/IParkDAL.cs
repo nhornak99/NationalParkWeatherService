@@ -10,6 +10,6 @@ namespace NPGeek.Web.Models.DALS
     {
         List<Park> GetAllParks();
         string GetWeatherData(string parkCode);
-        int[] GetLatitudeAndLongitude(string parkCode);
+        string GetWeatherApiDataFromParkCode(string parkCode);
     }
 }
