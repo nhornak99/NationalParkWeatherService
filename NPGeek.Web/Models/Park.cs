@@ -26,16 +26,5 @@ namespace NPGeek.Web.Models
 
         public string Weather { get; set; }
         public int NumberOfFavorites { get; set; }
-
-        public void ConvertTemperature()
-        {
-            var weatherJson = Json.Decode(Weather);
-            foreach(var day in weatherJson)
-            {
-                day.Low = (((double)day.Low - 32) / 1.8).ToString();
-                day.High = (((double)day.High - 32) / 1.8).ToString();
-            }
-            Weather = weatherJson;
-        }
     }
 }

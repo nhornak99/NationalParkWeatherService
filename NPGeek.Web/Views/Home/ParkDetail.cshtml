@@ -9,6 +9,7 @@
         { "rain" , "Pack rain gear and wear waterproof shoes." },
         { "partly cloudy", "Don't bother bringing sunscreen!"},
         { "thunderstorms", "Seek shelter and avoid hiking on exposed ridges." },
+        { "cloudy", "Don't bother bringing sunscreen!" },
         { "sunny", "pack sunblock." },
         { "snow", "pack snowshoes."},
     };
@@ -27,7 +28,7 @@
 <div class="weather-detail-today">
     <h3>Today</h3>
     <img src="~/Content/Images/weather/@(Today.Forecast).png" />
-    <div class="weather-detail-today-highlow">@Today.High @Today.Low</div>
+    <div class="weather-detail-today-highlow">High: <span class="weather-conversion"> @Today.High</span>&deg; Low: <span class="weather-conversion">@Today.Low</span>&deg;</div>
     <p>@weatherAdvice[Today.Forecast]</p>
     <p>@HotToday</p>
     <p>@ColdToday</p>
@@ -38,12 +39,12 @@
     {
     <div class="weather-detail-day">
         <img src="~/Content/Images/weather/@(Weather[i].Forecast.Replace(" ", "")).png" />
-        <p>@Weather[i].High</p>
-        <p>@Weather[i].Low</p>
+        <p>High: <span class="weather-conversion">@Weather[i].High</span>&deg;</p>
+        <p>Low: <span class="weather-conversion">@Weather[i].Low</span>&deg;</p>
     </div>
     }
 </div>
-<a href="@Html.Action(Model.ConvertTemperature(), "")"<button>Fahrenheit</button>
-<button>Celcius</button>
+<button onclick="WeatherConversion()">Toggle F&deg;/C&deg;</button>
+
 
 

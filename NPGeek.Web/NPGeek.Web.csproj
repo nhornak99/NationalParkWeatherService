@@ -125,6 +125,7 @@
     <Content Include="Content\Images\weather\sunny.png" />
     <Content Include="Content\Images\weather\thunderstorms.png" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\WeatherConverter.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="schema.sql" />
