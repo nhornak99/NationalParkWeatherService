@@ -28,9 +28,18 @@ namespace NPGeek.Web.Controllers
 
         public ActionResult ParkDetail(Park park)
         {
-            park.Weather = dal.GetWeatherData(park.ParkCode);
+            
+
 
             return View("ParkDetail", park);
+        }
+
+        public ActionResult GetWeatherData(Park park)
+        {
+            var coordinates = dal.GetLatitudeAndLongitude(park.ParkCode);
+            park.Latitude = coordinates[0];
+            park.Longitude = coordinates[1];
+            return RedirectToAction("ParkDetail", park);
         }
     }
 }

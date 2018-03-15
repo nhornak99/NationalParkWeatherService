@@ -1,5 +1,5 @@
 ﻿function WeatherConversion() {
-
+    
     var temp = document.cookie;    
 
     if (temp == "fahrenheit" || temp == null) {

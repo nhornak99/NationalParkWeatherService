@@ -9,7 +9,7 @@
 @foreach(var park in Model)
 {
     <div class="parkContainer">
-        <a href="@Url.Action("ParkDetail", "Home", park)"><img class="parkImg" src="~/Content/Images/parks/@(park.ParkCode.ToLower()).jpg" /></a>
+        <a href="@Url.Action("GetWeatherData", "Home", park)"><img class="parkImg" src="~/Content/Images/parks/@(park.ParkCode.ToLower()).jpg" /></a>
         <h2>@park.Name</h2>
         <p>@park.Description</p>
     </div>
