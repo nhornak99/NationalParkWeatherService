@@ -28,7 +28,7 @@ namespace NPGeek.Web.Models.DALS
                                                     park.elevationInFeet, park.milesOfTrail, park.numberOfCampsites,
                                                     park.climate, park.yearFounded, park.annualVisitorCount, park.inspirationalQuote,
                                                     park.inspirationalQuoteSource, park.parkDescription, park.entryFee, park.numberOfAnimalSpecies
-                                                    ORDER BY COUNT(survey_result.parkCode) DESC", conn);
+                                                    ORDER BY COUNT(survey_result.parkCode) DESC, park.parkName DESC", conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
