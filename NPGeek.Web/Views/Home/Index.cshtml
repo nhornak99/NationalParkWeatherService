@@ -13,8 +13,10 @@
 {
     park.Name = reg.Replace(park.Name, "");
     <div class="parkContainer">
-        <a href="@Url.Action("ParkDetail", "Home", park)"><div class="image-holder"><img class="parkImg" src="~/Content/Images/parks/@(park.ParkCode.ToLower()).jpg" /></div></a>
-        <h2 class="park-name">@park.Name<span class="national-park">National Park</span></h2>
-        <p class="park-description">@park.Description</p>
+        <a href="@Url.Action("ParkDetail", "Home", park)">
+            <div class="image-holder"><img class="parkImg" src="~/Content/Images/parks/@(park.ParkCode.ToLower()).jpg" /></div>
+            <h2 class="park-name">@park.Name<span class="national-park">National Park</span></h2>
+            <p class="park-description">@park.Description</p>
+        </a>
     </div>
 }

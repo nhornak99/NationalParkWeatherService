@@ -24,7 +24,7 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    filter: brightness(.7) blur(20px);
+    /*filter: brightness(.7) blur(20px);*/
 }
 
 .image-holder {
@@ -37,6 +37,15 @@
 }
 
 .parkImg:hover {
+    /*filter: blur(20px);*/
+
+}
+
+.parkContainer .parkImg {
+    filter: brightness(.7) blur(20px);
+}
+
+.parkContainer:hover .parkImg {
     filter: blur(20px);
 }
 
