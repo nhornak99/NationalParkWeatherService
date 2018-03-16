@@ -123,6 +123,32 @@ body{
 .park-detail-img{
     width: 100%;
     height: auto;
+    position: absolute;
+    top: -100px;
+}
+
+#park-enp {
+    top: -110%;
+}
+
+#park-gnp {
+    top: -70px;
+}
+
+#park-gsmnp {
+    top: -60%;
+}
+
+#park-gtnp {
+    top: -30px;
+}
+
+#park-mrnp {
+    top: -280px;
+}
+
+#park-ynp2 {
+    top: -200px;
 }
 
 .park-detail-weather{

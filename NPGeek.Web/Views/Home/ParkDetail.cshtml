@@ -49,7 +49,7 @@
     <img class="park-detail-img-blur" src="~/Content/Images/parks/@(Model.ParkCode.ToLower()).jpg" />
     <div class="park-detail-weather-container">
         <div class="park-deatil-img-container">
-            <img class="park-detail-img" src="~/Content/Images/parks/@(Model.ParkCode.ToLower()).jpg" />
+            <img id="park-@Model.ParkCode.ToLower()" class="park-detail-img" src="~/Content/Images/parks/@(Model.ParkCode.ToLower()).jpg" />
             <div class="detail-park-name"><h1>@Model.Name</h1></div>
             <button class="temperature-toggle-btn" onclick="WeatherConversion()">Toggle F&deg;/C&deg;</button>
         </div>

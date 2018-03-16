@@ -112,8 +112,9 @@
     <Content Include="Content\Images\geek.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\parks\enp.jpg" />
-    <Content Include="Content\Images\parks\gcnp.jpg" />
     <Content Include="Content\Images\parks\gnp.jpg" />
+    <Content Include="Content\Images\parks\Grand-Canyon-2.jpeg" />
+    <Content Include="Content\Images\parks\gcnp.jpg" />
     <Content Include="Content\Images\parks\gsmnp.jpg" />
     <Content Include="Content\Images\parks\gtnp.jpg" />
     <Content Include="Content\Images\parks\mrnp.jpg" />
@@ -179,6 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\weather\animated-icons\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
