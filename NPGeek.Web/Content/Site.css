@@ -3,6 +3,10 @@
     margin: 0 !important;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 .container, .parkContainer {
     background-color: black;
 }
@@ -78,3 +82,148 @@
     font-family: "Archivo Narrow", sans-serif;
 }
 
+.navbar-inverse{
+    background-color: black !important;
+}
+
+.container{
+    max-width: none !important;
+}
+
+.nav-link, .nav-link:hover{
+    text-decoration: none;
+    color: gray;
+}
+
+
+
+/*DETAIL*/
+.park-detail-img-blur{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(20px);
+}
+
+.park-detail-weather-container {
+    position: absolute;
+    top: 10vh;
+    left: 5vw;
+    width: 90vw;
+    height: 85vh;
+    color: whitesmoke;
+}
+
+.park-deatil-img-container{
+    height: 75%;
+    overflow: hidden;
+    position: relative;
+}
+
+.park-detail-img{
+    width: 100%;
+    height: auto;
+}
+
+.park-detail-weather{
+    display: grid;
+    grid-template-columns: 30% auto auto auto;
+    width: 100%;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 25%;
+}
+
+.weather-detail-today{
+    grid-column: 1 / span 1;
+}
+
+.weather-detail-today h3{
+    text-align: center;
+    width:100%;
+    margin-top: 0.25em !important;
+}
+
+.detail-four-day-forecast{
+    grid-column: 2 / span 4;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.weather-detail-day, .weather-detail-today {
+    position: relative;
+}
+
+.weather-detail-day p, .weather-detail-today p {
+    position: absolute;
+
+}
+
+.weather-day-high {
+    top: 76%;
+    left: 50%;
+    transform: translate(-50%, -76%);
+}
+
+.weather-day-low {
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -85%);
+}
+
+.wi {
+    font-size: 3.5em;
+    color: whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.detail-park-name{
+    position: absolute;
+    bottom: 2em;
+}
+
+.temperature-toggle-btn{
+    position: absolute;
+    right: 2em;
+    top: 2em;
+}
+
+.today-weather-advice {
+    
+    top: 76%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+}
+
+.today-weather-high {
+    top: 86%;
+    left: 50%;
+    transform: translate(-50%, -86%);
+}
+
+.today-weather-low {
+    top: 96%;
+    left: 50%;
+    transform: translate(-50%, -96%);
+}
+
+.today-weather-hot {
+    top: 26%;
+    left: 50%;
+    transform: translate(-50%, -26%);
+}
+
+.today-weather-cold {
+    top: 26%;
+    left: 50%;
+    transform: translate(-50%, -26%);
+}
+
+.today-weather-variableTemp {
+    top: 16%;
+    left: 50%;
+    transform: translate(-50%, -16%);
+}

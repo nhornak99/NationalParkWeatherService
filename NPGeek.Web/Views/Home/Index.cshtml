@@ -7,8 +7,6 @@
     Regex reg = new Regex("National Park");
 }
 
-<h2>Home</h2>
-
 @foreach (var park in Model)
 {
     park.Name = reg.Replace(park.Name, "");
