@@ -1,16 +1,20 @@
 ﻿@model List<NPGeek.Web.Models.Park>
+@using System.Text.RegularExpressions;
+
 @{
     //ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Regex reg = new Regex("National Park");
 }
 
 <h2>Home</h2>
 
-@foreach(var park in Model)
+@foreach (var park in Model)
 {
+    park.Name = reg.Replace(park.Name, "");
     <div class="parkContainer">
-        <a href="@Url.Action("ParkDetail", "Home", park)"><img class="parkImg" src="~/Content/Images/parks/@(park.ParkCode.ToLower()).jpg" /></a>
-        <h2>@park.Name</h2>
-        <p>@park.Description</p>
+        <a href="@Url.Action("ParkDetail", "Home", park)"><div class="image-holder"><img class="parkImg" src="~/Content/Images/parks/@(park.ParkCode.ToLower()).jpg" /></div></a>
+        <h2 class="park-name">@park.Name<span class="national-park">National Park</span></h2>
+        <p class="park-description">@park.Description</p>
     </div>
 }

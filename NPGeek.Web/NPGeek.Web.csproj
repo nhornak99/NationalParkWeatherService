@@ -108,9 +108,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\backpack.png" />
     <Content Include="Content\Images\backpack2.jpg" />
+    <Content Include="Content\Images\parks\cvnp.jpg" />
     <Content Include="Content\Images\geek.png" />
     <Content Include="Content\Images\logo.png" />
-    <Content Include="Content\Images\parks\cvnp.jpg" />
     <Content Include="Content\Images\parks\enp.jpg" />
     <Content Include="Content\Images\parks\gcnp.jpg" />
     <Content Include="Content\Images\parks\gnp.jpg" />

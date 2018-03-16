@@ -1,18 +1,71 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿* {
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.container, .parkContainer {
+    background-color: black;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+:root {
+    --main-font-color: white;
+}
+
+.parkContainer {
+    width: 100vw;
+    height: 30rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.parkImg {
+    width: 100%;
+    height: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: brightness(.7) blur(20px);
+}
+
+.image-holder {
+    overflow: hidden;
+    width: 95%;
+    height: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.parkImg:hover {
+    filter: blur(20px);
+}
+
+.park-name {
+    position: absolute;
+    color: var(--main-font-color);
+    font-size: 8rem;
+    left: 20rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    font-family: "Archivo Black", sans-serif;
+    text-transform: uppercase;
+    width: 40%;
+}
+
+.national-park {
+    font-family: "Archivo Narrow", sans-serif;
+    font-size: 3rem;
+    color: white;
+}
+
+.park-description {
+    color: mintcream;
+    position: absolute;
+    right: 20rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30%;
+    font-family: "Archivo Narrow", sans-serif;
 }
 
